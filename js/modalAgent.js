@@ -114,7 +114,7 @@ export const modalAgent = () => {
     // event listeners
     orderTrigger.addEventListener('click', () => hideForm.classList.toggle('hide-form-active'));
 
-    orderTicketForm.addEventListener('change', e => floatLabels);
+    orderTicketForm.addEventListener('change', e => floatLabels(e));
 
     orderTicketForm.addEventListener('submit', e => {
         e.preventDefault();

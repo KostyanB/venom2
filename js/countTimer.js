@@ -1,17 +1,18 @@
 //***************** Count timer ******************
 //*********************************************
-// timer
-
 export const countTimer = (deadline) => {
-    //get timer elements
+    // get timer elements
     const timer = document.querySelector('.timer'),
-        timerNumbers = document.querySelector('.timer-numbers'),
         timerHours = document.getElementById('timer-hours'),
         timerMinutes = document.getElementById('timer-minutes'),
         timerSeconds = document.getElementById('timer-seconds'),
         timerDays = document.getElementById('timer-days');
 
-    const dateMap = new Map();
+    const dateMap = new Map(),
+        textBase = {
+            'days': ['день', 'дня', 'дней'],
+            'hours': ['час', 'часа', 'часов'],
+        };
     let timeRemaining = 0;
     // show time
     const showTime = () => {
@@ -21,10 +22,22 @@ export const countTimer = (deadline) => {
         timerDays.textContent = dateMap.get('days');
         timer.style.visibility = 'visible';
     };
-    // correct 0 of show time
+    // correction timer text
+    const correctText = (item, key) => {
+        const textField = document.querySelector(`.${key}-text`);
+        const texts = textBase[key]; // key -> дни или часы в базе
+        if (item >= 11 && item <= 19) {
+            textField.textContent = texts[2];
+        } else {
+            const value = Math.floor(item % 10);
+            textField.textContent = (value === 1) ? texts[0] : (value >= 2 && value <= 4) ? texts[1] : texts[2];
+        }
+    };
+    // correction 0 of show time
     const correctZero = () => {
-        dateMap.forEach((item, key) => { // 0 вначале
-            (item < 10) && dateMap.set(key, `0${item}`);
+        dateMap.forEach((item, key) => {
+            (key === 'hours' || key === 'days') && correctText(item, key);
+            (item < 10) && dateMap.set(key, `0${item}`);// добавл. 0 вначале
         });
     };
     // set timer
@@ -43,7 +56,7 @@ export const countTimer = (deadline) => {
         dateMap.set('minutes', '00');
         dateMap.set('hours', '00');
         dateMap.set('days', '00');
-        timerNumbers.style.color = '#B30303';
+        timer.style.color = '#B30303';
         showTime();
     };
     // check date
