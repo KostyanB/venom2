@@ -1,5 +1,4 @@
-// ****************** Main menu *****************
-export const handlerMenu = () => {
+const handlerMenu = () => {
     const menuButton = document.querySelector(".menu-button"),
         menu = document.querySelector(".nav-menu"),
         menuButtonClose = document.querySelector(".menu-button-close"),
@@ -17,4 +16,5 @@ export const handlerMenu = () => {
             (e.target === menuButton) && openMenu();
             (e.target === menuButtonClose || e.target === navMenuWrapper) && closeMenu();
     });
-}
+};
+export default handlerMenu;

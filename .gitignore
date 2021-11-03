@@ -7,11 +7,14 @@
 firebase.json
 .firebaserc
 database.rules.json
-README.md
+
 
 /public/
+/build/
 
 package-lock.json
-# /css/
+/css/
+/js/
 # /fonts/
 # /images/
+/draft/

@@ -4,7 +4,7 @@
 
 ## О приложениии
 
-Демо [Venom-2](https://wildpotatos-53c4a.web.app/).
+Демо [Venom-2](https://venom2-promo.web.app).
 
 В проекте с помощью JS реализованы:
 * Окно модального агента;
@@ -26,7 +26,7 @@ My pet project
 
 ## About Web-app
 
-Demo at [Venom-2](https://wildpotatos-53c4a.web.app/).
+Demo at [Venom-2](https://venom2-promo.web.app).
 
 Implemented in the project using JS:
 * Modal agent window;
