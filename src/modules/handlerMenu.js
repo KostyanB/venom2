@@ -13,8 +13,9 @@ const handlerMenu = () => {
         menuButtonClose.classList.remove("is-active");
     };
     document.addEventListener("click", e => {
-            (e.target === menuButton) && openMenu();
-            (e.target === menuButtonClose || e.target === navMenuWrapper) && closeMenu();
+        console.log('e.target: ', e.target);
+            (e.target.closest('.menu-button')) && openMenu();
+            (e.target.closest('.menu-button-close') || e.target === navMenuWrapper) && closeMenu();
     });
 };
 export default handlerMenu;

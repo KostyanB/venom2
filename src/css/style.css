@@ -64,11 +64,23 @@ img, video {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+
 }
 
 .nav-menu-link {
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.5);
+  color: inherit;
+}
+
+.nav-menu-link:hover,
+.menu-button-close:hover,
+.menu-button:hover,
+.button-link:hover {
+  color:#4081AF;
+}
+
+.button-link:hover svg path {
+  fill:#4081AF;
 }
 
 .film-date {
@@ -290,8 +302,6 @@ img, video {
   overflow-y: auto;
   transform: translateY(100%);
 }
-
-
 
 .hide-form-active {
   transform: translateY(calc(100% - 30px));
